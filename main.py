@@ -12,8 +12,12 @@ def save_data_helper(videos):
         json.dump(videos, file)
 
 def list_all_videos(videos):
+    print('\n')
+    print("*"*69)
     for index, video in enumerate(videos, start=1):
-        print(f"{index}.")
+        print(f"{index}. {video['name']}, Duration: {video['time']}")
+    print('\n')
+    print("*"*69)
 
 def add_video(videos):
     name =input("Enter video name: ")
@@ -37,7 +41,7 @@ def main():
         print("4. Delete a YouTube video")
         print("5. Exit the app")
         choice=input("Enter your choice : ")
-        print(videos)
+        # print(videos)
         match choice:
             case '1':
                 list_all_videos(videos)
